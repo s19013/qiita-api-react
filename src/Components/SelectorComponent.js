@@ -1,9 +1,8 @@
 export default function SelectorComponent({options,per_page,setPerPage}) {
     /** 入力するたびに親コンポーネントの`per_page`に代入 */
     const handleChange = (e) => {
+        // e.target.valueでoptionのvalueを受けるもよう
         setPerPage(e.target.value)
-
-        // e.target.valueはお決まりみたいなものなのかな?
     }
 
 
@@ -17,7 +16,6 @@ export default function SelectorComponent({options,per_page,setPerPage}) {
             <select value={per_page} onChange={handleChange}>
                 {renderOptions}
             </select>
-            
         </div>
     )
 }
