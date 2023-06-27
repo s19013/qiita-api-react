@@ -2,6 +2,7 @@ import { useState,useEffect } from 'react';
 
 export default function PaginationComponent({selected,pageCount,turnPage}) {
 
+    // vueでいうwatch
     /** selectedに変化があったら動かす */
     useEffect(() => {
         /** 5以下の時の処理 */
