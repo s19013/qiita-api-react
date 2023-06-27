@@ -3,11 +3,12 @@ import './PageinationComponent.css'
 
 export default function PaginationComponent({selected,pageCount,turnPage}) {
 
-    // vueでいうwatch
+    // vueでいうwatchとmounted
     /** selectedに変化があったら動かす */
     useEffect(() => {
         /** 5以下の時の処理 */
         if (selected <= 5) {rebuildingDisplayNumber(1,9)}
+        else if (selected >= 95) {rebuildingDisplayNumber(91,100)}
         else {rebuildingDisplayNumber(selected - 4,selected + 4)}
       }, [selected])
 
