@@ -43,8 +43,6 @@ export default function PaginationComponent({selected,pageCount,turnPage}) {
 
     return (
         <div className="pagination">
-            <p>{selected}</p>
-            <p>{pageCount}</p>
             <ul>
                 {displayPages}
             </ul>
