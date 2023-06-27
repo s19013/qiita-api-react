@@ -20,7 +20,7 @@ function App() {
     const [per_page,setPerPage] = useState(10)
 
     /** 何ページ目か */
-    const [page,setPage] = useState(6)
+    const [page,setPage] = useState(1)
 
     /** 入力記録 ページめくりで使う */
     const [inputHistory,setInputHistory] = useState({
@@ -43,7 +43,15 @@ function App() {
                 query:keyword
             }
         })
-        .then((res) => { setArticles(res.data) })
+        .then((res) => {
+            setArticles(res.data) 
+            // 検索した情報を保管
+            setInputHistory({
+                page:page,
+                per_page:per_page,
+                keyword:keyword
+            })
+        })
         .catch((err) => { console.log(err); })
 
         // 読み込み中の文字削除
@@ -60,13 +68,6 @@ function App() {
         // 空文字だったらnullにする必要がある じゃないと何も取ってこない
         if (keyword == "") { setKeyword(null) }
         getArticle({
-            page:1,
-            per_page:per_page,
-            keyword:keyword
-        })
-
-        // 検索した情報を保管
-        setInputHistory({
             page:1,
             per_page:per_page,
             keyword:keyword
