@@ -1,3 +1,5 @@
+import './ArticleComponent.css'
+
 export default function ArticleComponent({article}) {
     return (
         <div className="article">
