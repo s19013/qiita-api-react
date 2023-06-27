@@ -87,6 +87,7 @@ function App() {
     }
 
     // このwebページを最初に読み込んだ時の動き
+    // vueでいうmounted
     useEffect(() => {
         getArticle({
             page:inputHistory.page,
@@ -116,7 +117,6 @@ function App() {
             pageCount={100}
             turnPage={turnPage}
         />
-        {/* selected={page} */}
     </div>
   );
 }
