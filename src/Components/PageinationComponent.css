@@ -1,0 +1,4 @@
+ul{display: flex;}
+li{ list-style: none; }
+li button{padding: 0.5rem  1rem;}
+.selected{ background-color: aquamarine; }

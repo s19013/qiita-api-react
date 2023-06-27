@@ -1,4 +1,5 @@
 import { useState,useEffect } from 'react';
+import './PageinationComponent.css'
 
 export default function PaginationComponent({selected,pageCount,turnPage}) {
 
