@@ -7,9 +7,10 @@ export default function PaginationComponent({selected,pageCount,turnPage}) {
     /** selectedに変化があったら動かす */
     useEffect(() => {
         /** 5以下の時の処理 */
-        if (selected <= 5) {rebuildingDisplayNumber(1,9)}
-        else if (selected >= 95) {rebuildingDisplayNumber(91,100)}
-        else {rebuildingDisplayNumber(selected - 4,selected + 4)}
+        if (selected <= 5) {rebuildingDisplayPages(1,9)}
+        /** pageCountに近い時も特殊 */
+        else if (selected > pageCount - 5) {rebuildingDisplayPages(pageCount - 8,pageCount)}
+        else {rebuildingDisplayPages(selected - 4,selected + 4)}
       }, [selected])
 
 
@@ -35,13 +36,15 @@ export default function PaginationComponent({selected,pageCount,turnPage}) {
     // turnPage(page)ってそのまま書くと表示されるのと同時に1度関数が動いてしまうもよう
     // 加えて無限ループぽい動きを見せた
 
-    const rebuildingDisplayNumber = (min,max) => {
+    /** @func displayPagesを作り直す
+     *  @param min 表示上の最小値
+     *  @param max 表示上の最大値
+    */
+    const rebuildingDisplayPages = (min,max) => {
         const temp = []
         for (let index = min; index <= max; index++) { temp.push(index) }
         setPages(temp)
     }
-
-
 
     return (
         <div className="pagination">
