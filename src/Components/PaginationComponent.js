@@ -9,7 +9,7 @@ export default function PaginationComponent({selected,pageCount,turnPage}) {
         else {rebuildingDisplayNumber(selected - 4,selected + 4)}
       }, [selected])
 
-    const [pages,setPages] = useState([1,2,3,4,5,6,7,8,9])
+    const [pages,setPages] = useState([])
 
     /** 画面の一番したに表示するやつ */
     const displayPages = pages.map((page,index) => {
@@ -26,8 +26,11 @@ export default function PaginationComponent({selected,pageCount,turnPage}) {
         )
     })
 
+    // onClick={() =>{turnPage(page)}}
+
     // value={page} にすればe.target.valueで受け取れる
-    // turnPageってそのまま書くと表示されるのと同時に1度関数が動いてしまうもよう
+    // turnPage(page)ってそのまま書くと表示されるのと同時に1度関数が動いてしまうもよう
+    // 加えて無限ループぽい動きを見せた
 
     const rebuildingDisplayNumber = (min,max) => {
         const temp = []
