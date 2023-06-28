@@ -1,4 +1,9 @@
 .article {
     border: 1px dashed #000000;
     margin: 0.5rem;
+    padding: 0 1rem;
+}
+
+h2 {
+    text-align: left;
 }
