@@ -99,6 +99,7 @@ function App() {
 
   return (
     <div className="App">
+        <p>1時間につき60回まで</p>
         <InputComponent 
             text={inputHistory.keyword}
             setKeyword={setKeyword}
