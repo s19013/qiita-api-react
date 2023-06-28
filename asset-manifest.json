@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/qiita-api-react/static/css/main.d944bfd8.css",
+    "main.js": "/qiita-api-react/static/js/main.78c80ca0.js",
+    "static/js/787.851c03c1.chunk.js": "/qiita-api-react/static/js/787.851c03c1.chunk.js",
+    "index.html": "/qiita-api-react/index.html",
+    "main.d944bfd8.css.map": "/qiita-api-react/static/css/main.d944bfd8.css.map",
+    "main.78c80ca0.js.map": "/qiita-api-react/static/js/main.78c80ca0.js.map",
+    "787.851c03c1.chunk.js.map": "/qiita-api-react/static/js/787.851c03c1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d944bfd8.css",
+    "static/js/main.78c80ca0.js"
+  ]
+}
